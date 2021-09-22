@@ -10,7 +10,9 @@ import Foundation
 protocol GameDelegate: AnyObject {
     func nextQuestions(model: GameItemResponse?)
     func showQuestionsCount(questionsCount: Int, currentIndex: Int)
-    func showResult()
+    func showResult(model: GameResponse?, rightAnswerCount: Int, gameModel: GameModel)
+    func showRightAnswer(answer: String)
+    func showWrongAnswer(answer: String)
 }
 
 class GameViewModel {
@@ -18,11 +20,14 @@ class GameViewModel {
     private weak var delegate: GameDelegate? = nil
 
     var gameReposnse: GameResponse? = nil
+    var gameModel: GameModel = GameModel()
     
     private var currentAnsver: String? = nil
     
     private var questionsCount: Int = 0
     private var questionsCurrentIndex: Int = 0
+    
+    private var rightAnswerCount: Int = 0
     
     init(delegate: GameDelegate) {
         self.delegate = delegate
@@ -41,7 +46,19 @@ class GameViewModel {
             gameReposnse?.results[questionsCurrentIndex].incorrect_answers.insert(currentAnsver ?? String(), at: Int.random(in: 0...3))
             delegate?.nextQuestions(model: gameReposnse?.results[questionsCurrentIndex])
         } else {
-            delegate?.showResult()
+            delegate?.showResult(model: gameReposnse, rightAnswerCount: rightAnswerCount, gameModel: gameModel)
+        }
+    }
+    
+    func answerClick(answer: String) {
+        let rightAnswer = gameReposnse?.results[questionsCurrentIndex].correct_answer ?? String()
+        
+        if answer == rightAnswer {
+            rightAnswerCount += 1
+            
+            delegate?.showRightAnswer(answer: answer)
+        } else {
+            delegate?.showWrongAnswer(answer: answer)
         }
     }
     

@@ -11,6 +11,19 @@ import SnapKit
 
 class ResultViewController: UIViewController {
     
+    static func newInstanse(model: GameResponse?, rightAnswerCount: Int, category: String, gameModel: GameModel) -> ResultViewController {
+        let viewController = ResultViewController()
+        viewController.viewModel.model = model
+        viewController.viewModel.category = category
+        viewController.viewModel.gameModel = gameModel
+        viewController.viewModel.rightAnswerCount = rightAnswerCount
+        return viewController
+    }
+    
+    private lazy var viewModel: ResultViewModel = {
+        return ResultViewModel(delegate: self)
+    }()
+    
     private lazy var resultImage: UIImageView = {
         let view = UIImageView(image: UIImage(named: "result_done"))
         return view
@@ -128,9 +141,21 @@ class ResultViewController: UIViewController {
             make.right.equalTo(resultView.snp.right).offset(-35)
             make.top.equalTo(resultView.safeArea.top).offset(81)
         }
+        
+        viewModel.showResult()
     }
     
     @objc func filishClick(view: UIButton) {
         navigationController?.pushViewController(MainController(), animated: true)
+    }
+}
+
+extension ResultViewController: ResultDelagate {
+    func showAllData(category: String, correntAnswer: String, result: String, difficulty: String) {
+        
+        resultСategory.text = category
+        answersResult.text = correntAnswer
+        dificultyResult.text = difficulty
+        percentResult.text = result
     }
 }

@@ -23,7 +23,7 @@ class MainController: UIViewController {
     private lazy var questionsAmount: UILabel = {
         let view = UILabel()
         view.textColor = .init(hex: "#A9A9A9")
-        view.text = "Questions amount: "
+        view.text = LocalizationUtils.questionsAmount
         view.font = UIFont.systemFont(ofSize: 12)
         return view
     }()
@@ -243,8 +243,8 @@ class MainController: UIViewController {
 }
 
 extension MainController: MainDelegate {
-    func startGame(category: String, gameModel: GameResponse) {
-        navigationController?.pushViewController(GameController.newInstance(category: category, model: gameModel), animated: true)
+    func startGame(category: String, gameModel: GameResponse, model: GameModel) {
+        navigationController?.pushViewController(GameController.newInstance(category: category, model: gameModel, gameModel: model), animated: true)
     }
     
     func setupCatogory(category: [String]) {

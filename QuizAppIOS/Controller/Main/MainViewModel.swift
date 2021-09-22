@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MainDelegate: AnyObject {
-    func startGame(category: String, gameModel: GameResponse)
+    func startGame(category: String, gameModel: GameResponse, model: GameModel)
     func showError(message: String)
     
     func setupCatogory(category: [String])
@@ -72,8 +72,8 @@ class MainViewModel {
                 if let data = data {
                     dump(data)
                     
-                    DispatchQueue.main.async {
-                        self.delegate?.startGame(category: self.titleCatogory, gameModel: data)
+                    DispatchQueue.main.async { [self] in
+                        self.delegate?.startGame(category: self.titleCatogory, gameModel: data, model: gameModel)
                     }
                 } else {
                     DispatchQueue.main.async {
