@@ -33,6 +33,7 @@
 		FF6F38C626FB6B17004C69B2 /* LocalizationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38C526FB6B17004C69B2 /* LocalizationUtils.swift */; };
 		FF6F38C826FB6B6D004C69B2 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38C726FB6B6D004C69B2 /* Language.swift */; };
 		FF6F38CA26FB74F9004C69B2 /* ResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38C926FB74F9004C69B2 /* ResultViewModel.swift */; };
+		FF6F38CD26FCE7A8004C69B2 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38CC26FCE7A8004C69B2 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		FF6F38C526FB6B17004C69B2 /* LocalizationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationUtils.swift; sourceTree = "<group>"; };
 		FF6F38C726FB6B6D004C69B2 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		FF6F38C926FB74F9004C69B2 /* ResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewModel.swift; sourceTree = "<group>"; };
+		FF6F38CC26FCE7A8004C69B2 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 		FF6F387026F66B8B004C69B2 /* QuizAppIOS */ = {
 			isa = PBXGroup;
 			children = (
+				FF6F38CB26FCE78B004C69B2 /* History */,
 				FF6F38C426FB6AD1004C69B2 /* Localization */,
 				FF6F38C026FB69E8004C69B2 /* Controller */,
 				FF6F38B026F7207C004C69B2 /* Model */,
@@ -275,6 +278,14 @@
 				FF6F38C726FB6B6D004C69B2 /* Language.swift */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		FF6F38CB26FCE78B004C69B2 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				FF6F38CC26FCE7A8004C69B2 /* HistoryViewController.swift */,
+			);
+			path = History;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,6 +542,7 @@
 				FF6F38AC26F71E5D004C69B2 /* Exensions.swift in Sources */,
 				FF6F38C626FB6B17004C69B2 /* LocalizationUtils.swift in Sources */,
 				FF6F38B626F72145004C69B2 /* CategoryItemResponse.swift in Sources */,
+				FF6F38CD26FCE7A8004C69B2 /* HistoryViewController.swift in Sources */,
 				FF6F38AF26F71F53004C69B2 /* MainViewModel.swift in Sources */,
 				FF6F38BD26F7222A004C69B2 /* GameController.swift in Sources */,
 			);

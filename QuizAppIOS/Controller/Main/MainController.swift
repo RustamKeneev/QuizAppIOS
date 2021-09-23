@@ -11,6 +11,17 @@ import DropDown
 
 class MainController: UIViewController {
     
+//    private lazy var tabbarViewController: UITabBarController = {
+//        let tabbarViewController = UITabBarController()
+//        tabbarViewController.setViewControllers([MainController(),
+//                                                 HistoryViewController()],
+//                                                 animated: true)
+//                    
+//        return tabbarViewController
+//    }()
+    
+
+    
     private lazy var viewModel: MainViewModel = {
         return MainViewModel(delegate: self)
     }()
