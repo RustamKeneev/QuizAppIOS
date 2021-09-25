@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol ResultDelagate: AnyObject {
     func showAllData(
@@ -18,6 +19,8 @@ protocol ResultDelagate: AnyObject {
 
 class ResultViewModel {
     
+    private var realm: Realm? = nil
+    
     var model: GameResponse? = nil
     var rightAnswerCount: Int = 0
     var category: String = String()
@@ -27,9 +30,23 @@ class ResultViewModel {
     
     init(delegate: ResultDelagate) {
         self.delegate = delegate
+        
+        try! realm = Realm()
     }
     
     func showResult() {
+        let history = HistoryModel()
+        
+        history.category = category
+        history.correntAnswer = String(rightAnswerCount)
+        history.countAnswer = String(model?.results.count ?? 0)
+        history.result = "\((rightAnswerCount * 100) / (model?.results.count ?? 0))%"
+        history.difficulty = gameModel.dificulty ?? String()
+        
+        try! realm?.write {
+            realm?.add(history)
+        }
+        
         delegate?.showAllData(
             category: "Category: \(category)",
             correntAnswer: "Correct answers:\n\(model?.results.count ?? 0)/\(rightAnswerCount)",

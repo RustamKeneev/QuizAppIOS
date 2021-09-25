@@ -7,23 +7,23 @@
 
 import Foundation
 
-protocol MainDelegate: AnyObject {
+protocol StartGameDelegate: AnyObject {
     func startGame(category: String, gameModel: GameResponse, model: GameModel)
     func showError(message: String)
     
     func setupCatogory(category: [String])
 }
 
-class MainViewModel {
+class StartGameViewModel {
     
-    private weak var delegate: MainDelegate? = nil
+    private weak var delegate: StartGameDelegate? = nil
 
     private var gameModel: GameModel = GameModel()
     private var catogory: CategoryResponse? = nil
     
     private var titleCatogory = String()
     
-    init(delegate: MainDelegate) {
+    init(delegate: StartGameDelegate) {
         self.delegate = delegate
     }
     
