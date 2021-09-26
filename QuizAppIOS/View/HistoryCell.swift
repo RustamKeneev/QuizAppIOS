@@ -51,5 +51,11 @@ class HistoryCell: UITableViewCell {
             make.right.equalToSuperview().offset(-8)
             make.left.equalToSuperview().offset(8)
         }
+        
+        addSubview(category)
+        category.snp.makeConstraints { (make) in
+            make.left.equalToSuperview().offset(8)
+            make.top.equalToSuperview().offset(8)
+        }
     }
 }
