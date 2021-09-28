@@ -40,6 +40,8 @@
 		FF6F38E026FF6C69004C69B2 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38DF26FF6C69004C69B2 /* ProfileViewModel.swift */; };
 		FF6F38E226FF6CAB004C69B2 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38E126FF6CAB004C69B2 /* HistoryModel.swift */; };
 		FF6F38E526FF72E0004C69B2 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38E426FF72E0004C69B2 /* HistoryCell.swift */; };
+		FF6F38E727035806004C69B2 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38E627035806004C69B2 /* ProfileModel.swift */; };
+		FF6F38EA27036121004C69B2 /* ShareThisAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38E927036121004C69B2 /* ShareThisAppCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +107,8 @@
 		FF6F38DF26FF6C69004C69B2 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		FF6F38E126FF6CAB004C69B2 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		FF6F38E426FF72E0004C69B2 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		FF6F38E627035806004C69B2 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
+		FF6F38E927036121004C69B2 /* ShareThisAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareThisAppCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +265,7 @@
 				FF6F38B726F72176004C69B2 /* GameResponse.swift */,
 				FF6F38B926F721A2004C69B2 /* GameItemResponse.swift */,
 				FF6F38E126FF6CAB004C69B2 /* HistoryModel.swift */,
+				FF6F38E627035806004C69B2 /* ProfileModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 		FF6F38DA26FF69AA004C69B2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				FF6F38E8270360FD004C69B2 /* ShareThisApp */,
 				FF6F38DB26FF69BE004C69B2 /* ProfileController.swift */,
 				FF6F38DF26FF6C69004C69B2 /* ProfileViewModel.swift */,
 			);
@@ -328,6 +334,14 @@
 				FF6F38E426FF72E0004C69B2 /* HistoryCell.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FF6F38E8270360FD004C69B2 /* ShareThisApp */ = {
+			isa = PBXGroup;
+			children = (
+				FF6F38E927036121004C69B2 /* ShareThisAppCell.swift */,
+			);
+			path = ShareThisApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -581,6 +595,7 @@
 				FF6F38B226F72092004C69B2 /* GameModel.swift in Sources */,
 				FF6F387226F66B8B004C69B2 /* AppDelegate.swift in Sources */,
 				FF6F38B426F720B2004C69B2 /* CategoryResponse.swift in Sources */,
+				FF6F38E727035806004C69B2 /* ProfileModel.swift in Sources */,
 				FF6F38D926FF698C004C69B2 /* HistoryController.swift in Sources */,
 				FF6F38C826FB6B6D004C69B2 /* Language.swift in Sources */,
 				FF6F387426F66B8B004C69B2 /* SceneDelegate.swift in Sources */,
@@ -588,6 +603,7 @@
 				FF6F38A926F71E25004C69B2 /* ResultViewController.swift in Sources */,
 				FF6F38AC26F71E5D004C69B2 /* Exensions.swift in Sources */,
 				FF6F38E526FF72E0004C69B2 /* HistoryCell.swift in Sources */,
+				FF6F38EA27036121004C69B2 /* ShareThisAppCell.swift in Sources */,
 				FF6F38C626FB6B17004C69B2 /* LocalizationUtils.swift in Sources */,
 				FF6F38B626F72145004C69B2 /* CategoryItemResponse.swift in Sources */,
 				FF6F38AF26F71F53004C69B2 /* StartGameViewModel.swift in Sources */,
