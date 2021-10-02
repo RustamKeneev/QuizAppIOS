@@ -13,4 +13,6 @@ class HistoryModel: Object {
     @objc dynamic var countAnswer: String? = nil
     @objc dynamic var result: String? = nil
     @objc dynamic var difficulty: String? = nil
+    
+    @objc dynamic var date: String? = nil
 }

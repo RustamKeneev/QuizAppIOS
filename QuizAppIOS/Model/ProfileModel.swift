@@ -9,22 +9,16 @@ import Foundation
 import UIKit
 
 class ProfileModel {
-    var itemText: String? = nil
-    var arrowRight: Int? = nil
+    var title: String
+    var type: TypeProfileModel
     
-    var model: Int? = nil
+    init(title: String, type: TypeProfileModel) {
+        self.title = title
+        self.type = type
+    }
+}
 
-    
-    init(itemText: String, arrowRight: Int) {
-        self.itemText = itemText
-        self.arrowRight = arrowRight
-    }
-    
-    init(model: Int) {
-           self.model = model
-       }
-    
-    init() {
-        
-    }
+enum TypeProfileModel {
+    case clear
+    case share
 }

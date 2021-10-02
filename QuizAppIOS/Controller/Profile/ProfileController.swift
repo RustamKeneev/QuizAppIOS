@@ -10,57 +10,70 @@ import UIKit
 
 class ProfileController: UIViewController {
     
-    var data = [ProfileModel(model: 0),
-    ProfileModel(model: 1),
-    ProfileModel(model: 2),
-    ProfileModel(model: 3)]
+    private lazy var viewModel: ProfileViewModel = {
+        return ProfileViewModel(delegate: self)
+    }()
     
     private lazy var profileTableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .clear
+        tableView.backgroundColor = .white
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.tableFooterView = UIView()
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 10000, bottom: 0, right: 0)
+        tableView.separatorStyle = .none
         return tableView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
-
-        
-        view.backgroundColor = .white
-        
         title = "Profile"
-    }
-    
-    func configure() {
-        setupAddSubviews()
-        setupAddConstraints()
-    }
-    
-    func setupAddSubviews() {
+
+        view.backgroundColor = .white
+
         view.addSubview(profileTableView)
-    }
-    
-    func setupAddConstraints() {
         profileTableView.snp.makeConstraints { (make) in
             make.top.equalTo(view.safeArea.top)
             make.leading.trailing.equalToSuperview()
             make.height.equalToSuperview()
         }
     }
-    
+}
+
+extension ProfileController: ProfileDelegate {
+    func showData() {
+        profileTableView.reloadData()
+    }
 }
 
 extension ProfileController: UITabBarDelegate,UITableViewDataSource, UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let model = viewModel.profileList[indexPath.row]
+        
+        switch model.type {
+        case .clear: viewModel.removeHistory()
+            break
+        case .share:
+            break
+        }
+        
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return viewModel.profileList.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let model = viewModel.profileList[indexPath.row]
+        let cell = ProfileCell()
+        
+        cell.fill(model)
+        
+        return cell
     }
     
     

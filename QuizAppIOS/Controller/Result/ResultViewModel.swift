@@ -43,6 +43,13 @@ class ResultViewModel {
         history.result = "\((rightAnswerCount * 100) / (model?.results.count ?? 0))%"
         history.difficulty = gameModel.dificulty ?? String()
         
+        let date = Date()
+        let formatter = DateFormatter()
+        
+        formatter.dateFormat = "dd.MM.yyyy HH:mm"
+        
+        history.date = formatter.string(from: date)
+
         try! realm?.write {
             realm?.add(history)
         }

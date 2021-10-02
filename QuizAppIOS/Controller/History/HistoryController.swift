@@ -26,6 +26,10 @@ class HistoryController: UIViewController {
     
     private var history: Results<HistoryModel>? = nil
     
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.showHistory()
+    }
+    
     override func viewDidLoad() {
         view.backgroundColor = .white
         
@@ -45,7 +49,7 @@ class HistoryController: UIViewController {
 
 extension HistoryController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 110
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,12 +60,12 @@ extension HistoryController: UITableViewDelegate, UITableViewDataSource {
         let data = history?[indexPath.row]
         let cell = HistoryCell()
         
-        cell.textLabel?.text = data?.category
+        if let data = data {
+            cell.fill(data)
+        }
         
         return cell
     }
-    
-    
 }
 
 extension HistoryController: HistoryDelegate {

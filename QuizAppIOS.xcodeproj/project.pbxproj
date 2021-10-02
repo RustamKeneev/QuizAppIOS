@@ -10,6 +10,7 @@
 		35049107BE32489A2717F657 /* Pods_QuizAppIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC6D3F4516D775DF5507CA3 /* Pods_QuizAppIOS.framework */; };
 		701724DB21EEA9D718000A59 /* Pods_QuizAppIOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCACC8C4DBAF95EE6FBA1EA8 /* Pods_QuizAppIOSTests.framework */; };
 		8169E6DA3F49381A2FB58EAA /* Pods_QuizAppIOS_QuizAppIOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A58A3BAED166A5AD70708E /* Pods_QuizAppIOS_QuizAppIOSUITests.framework */; };
+		FF6766C72708A3B4008DF8D5 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6766C62708A3B4008DF8D5 /* ProfileCell.swift */; };
 		FF6F387226F66B8B004C69B2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F387126F66B8B004C69B2 /* AppDelegate.swift */; };
 		FF6F387426F66B8B004C69B2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F387326F66B8B004C69B2 /* SceneDelegate.swift */; };
 		FF6F387626F66B8B004C69B2 /* StartGameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F387526F66B8B004C69B2 /* StartGameController.swift */; };
@@ -41,7 +42,6 @@
 		FF6F38E226FF6CAB004C69B2 /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38E126FF6CAB004C69B2 /* HistoryModel.swift */; };
 		FF6F38E526FF72E0004C69B2 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38E426FF72E0004C69B2 /* HistoryCell.swift */; };
 		FF6F38E727035806004C69B2 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38E627035806004C69B2 /* ProfileModel.swift */; };
-		FF6F38EA27036121004C69B2 /* ShareThisAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6F38E927036121004C69B2 /* ShareThisAppCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +71,7 @@
 		AB4029136E7B81003FFA5CBD /* Pods-QuizAppIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizAppIOS.release.xcconfig"; path = "Target Support Files/Pods-QuizAppIOS/Pods-QuizAppIOS.release.xcconfig"; sourceTree = "<group>"; };
 		DA781BDC69374602AD2FE346 /* Pods-QuizAppIOS-QuizAppIOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizAppIOS-QuizAppIOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuizAppIOS-QuizAppIOSUITests/Pods-QuizAppIOS-QuizAppIOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FCACC8C4DBAF95EE6FBA1EA8 /* Pods_QuizAppIOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizAppIOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF6766C62708A3B4008DF8D5 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		FF6F386E26F66B8B004C69B2 /* QuizAppIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizAppIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF6F387126F66B8B004C69B2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF6F387326F66B8B004C69B2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +109,6 @@
 		FF6F38E126FF6CAB004C69B2 /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
 		FF6F38E426FF72E0004C69B2 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		FF6F38E627035806004C69B2 /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
-		FF6F38E927036121004C69B2 /* ShareThisAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareThisAppCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,7 +321,6 @@
 		FF6F38DA26FF69AA004C69B2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				FF6F38E8270360FD004C69B2 /* ShareThisApp */,
 				FF6F38DB26FF69BE004C69B2 /* ProfileController.swift */,
 				FF6F38DF26FF6C69004C69B2 /* ProfileViewModel.swift */,
 			);
@@ -332,16 +331,9 @@
 			isa = PBXGroup;
 			children = (
 				FF6F38E426FF72E0004C69B2 /* HistoryCell.swift */,
+				FF6766C62708A3B4008DF8D5 /* ProfileCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		FF6F38E8270360FD004C69B2 /* ShareThisApp */ = {
-			isa = PBXGroup;
-			children = (
-				FF6F38E927036121004C69B2 /* ShareThisAppCell.swift */,
-			);
-			path = ShareThisApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,6 +580,7 @@
 				FF6F38DE26FF6C55004C69B2 /* HistoryViewModel.swift in Sources */,
 				FF6F387626F66B8B004C69B2 /* StartGameController.swift in Sources */,
 				FF6F38E026FF6C69004C69B2 /* ProfileViewModel.swift in Sources */,
+				FF6766C72708A3B4008DF8D5 /* ProfileCell.swift in Sources */,
 				FF6F38BF26F72254004C69B2 /* GameViewModel.swift in Sources */,
 				FF6F38B826F72176004C69B2 /* GameResponse.swift in Sources */,
 				FF6F38E226FF6CAB004C69B2 /* HistoryModel.swift in Sources */,
@@ -603,7 +596,6 @@
 				FF6F38A926F71E25004C69B2 /* ResultViewController.swift in Sources */,
 				FF6F38AC26F71E5D004C69B2 /* Exensions.swift in Sources */,
 				FF6F38E526FF72E0004C69B2 /* HistoryCell.swift in Sources */,
-				FF6F38EA27036121004C69B2 /* ShareThisAppCell.swift in Sources */,
 				FF6F38C626FB6B17004C69B2 /* LocalizationUtils.swift in Sources */,
 				FF6F38B626F72145004C69B2 /* CategoryItemResponse.swift in Sources */,
 				FF6F38AF26F71F53004C69B2 /* StartGameViewModel.swift in Sources */,
