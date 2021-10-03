@@ -48,6 +48,21 @@ class HistoryController: UIViewController {
 }
 
 extension HistoryController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = history?[indexPath.row]
+        
+        let alert = UIAlertController(title: "Alert", message: "Start game?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {_ in
+            if let model = model {
+                self.viewModel.startGame(model: model)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: {_ in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
@@ -69,6 +84,14 @@ extension HistoryController: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension HistoryController: HistoryDelegate {
+    func showError(message: String) {
+        print(message)
+    }
+    
+    func startGame(category: String, gameModel: GameResponse, model: GameModel) {
+        navigationController?.pushViewController(GameController.newInstance(category: category, model: gameModel, gameModel: model), animated: true)
+    }
+    
     func showHistory(history: Results<HistoryModel>?) {
         self.history = history
         

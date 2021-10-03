@@ -39,6 +39,10 @@ class ProfileCell: UITableViewCell {
     }
     
     func fill(_ model: ProfileModel) {
+        if model.type == .clear {
+            title.textColor = .init(hex: "#BE52F2")
+        }
+        
         title.text = model.title
     }
 }

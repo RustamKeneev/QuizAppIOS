@@ -50,7 +50,15 @@ extension ProfileController: UITabBarDelegate,UITableViewDataSource, UITableView
         let model = viewModel.profileList[indexPath.row]
         
         switch model.type {
-        case .clear: viewModel.removeHistory()
+        case .clear:
+            let alert = UIAlertController(title: "Alert", message: "Clear history?", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: {_ in
+                self.viewModel.removeHistory()
+            }))
+            alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: {_ in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
             break
         case .share:
             break

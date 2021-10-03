@@ -9,6 +9,8 @@ import RealmSwift
 
 class HistoryModel: Object {
     @objc dynamic var category: String? = nil
+    @objc dynamic var categoryType: String? = nil
+
     @objc dynamic var correntAnswer: String? = nil
     @objc dynamic var countAnswer: String? = nil
     @objc dynamic var result: String? = nil

@@ -42,6 +42,7 @@ class ResultViewModel {
         history.countAnswer = String(model?.results.count ?? 0)
         history.result = "\((rightAnswerCount * 100) / (model?.results.count ?? 0))%"
         history.difficulty = gameModel.dificulty ?? String()
+        history.categoryType = String(gameModel.category ??  0)
         
         let date = Date()
         let formatter = DateFormatter()

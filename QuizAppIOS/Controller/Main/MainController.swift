@@ -21,9 +21,17 @@ class MainController: UITabBarController {
         start.title = "Start"
         history.title = "History"
         profile.title = "Profile"
-        
+                
         viewControllers = [
             start, history, profile
         ]
+        
+//        tabBar.barTintColor = UIColor.init(hex: "BE52F2")
+        tabBar.tintColor = UIColor.init(hex: "BE52F2")
+//        tabBar.unselectedItemTintColor = UIColor.init(hex: "BE52F2")
+        
+        tabBar.items?[0].image = UIImage(named: "start_game")
+        tabBar.items?[1].image = UIImage(named: "history")
+        tabBar.items?[2].image = UIImage(named: "profile")
     }
 }

@@ -10,6 +10,9 @@ import RealmSwift
 
 protocol HistoryDelegate {
     func showHistory(history: Results<HistoryModel>?)
+    func showError(message: String)
+
+    func startGame(category: String, gameModel: GameResponse, model: GameModel)
 }
 
 class HistoryViewModel {
@@ -26,6 +29,34 @@ class HistoryViewModel {
     
     func showHistory() {        
         delegate?.showHistory(history: realm?.objects(HistoryModel.self))
+    }
+    
+    func startGame(model: HistoryModel) {
+        var gameModel: GameModel = GameModel()
+        
+        gameModel.questions = Int(model.countAnswer ?? "0")
+        gameModel.category = Int(model.categoryType ?? "0")
+        gameModel.dificulty = model.difficulty ?? ""
+        
+        if gameModel.isStart() {
+            ApiClient.shared.getGame(gameModel: gameModel, completionHandler: {
+                data, error in
+                if let data = data {
+                    dump(data)
+                    
+                    DispatchQueue.main.async { [self] in
+                        self.delegate?.startGame(category: model.category ?? String(), gameModel: data, model: gameModel)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        self.delegate?.showError(message: "Game data is not parse")
+                    }
+                }
+            })
+            
+        } else {
+            delegate?.showError(message: "Game is not valid")
+        }
     }
 }
 
